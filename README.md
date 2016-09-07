@@ -1,68 +1,16 @@
-# Open Journal Systems
+PKP Web Application Library
+=======
 
-> Open Journal Systems (OJS) has been developed by the Public Knowledge Project. For general information about OJS and other open research systems, visit the [PKP web site][pkp].
+The PKP Web Application Library (PKP-WAL) is a library shared by [Open Journal Systems (OJS)](http://github.com/pkp/ojs), [Open Conference Systems (OCS)](http://github.com/pkp/ocs), [Open Monograph Press (OMP)](http://github.com/pkp/omp), and [Open Harvester Systems (OHS)](http://github.com/pkp/harvester). It is distributed with those applications in the lib/pkp subdirectory.
 
-[![Build Status](https://travis-ci.org/pkp/ojs.svg?branch=master)](https://travis-ci.org/pkp/ojs)
+Issues (bugs) for all of those applications should be [created against this repository](https://github.com/pkp/pkp-lib/issues).
 
-## Documentation
+## Issues
+Issues (bugs) for any of the PKP applications should be created here. If you're not sure whether you're encountering a bug or not, consider posting in the [PKP Community Forum](http://forum.pkp.sfu.ca/).
 
-You will find detailed guides in [docs](docs) folder.
+* [Create a new OMP issue](https://github.com/pkp/pkp-lib/issues/new?title=[OMP]) or [see existing](https://github.com/pkp/pkp-lib/labels/Open%20Monograph%20Press)
+* [Create a new OJS issue](https://github.com/pkp/pkp-lib/issues/new?title=[OJS]) or [see existing](https://github.com/pkp/pkp-lib/labels/Open%20Journal%20Systems)
+* [Create a new OCS issue](https://github.com/pkp/pkp-lib/issues/new?title=[OCS]) or [see existing](https://github.com/pkp/pkp-lib/labels/Open%20Conference%20Systems)
+* [Create a new OHS issue](https://github.com/pkp/pkp-lib/issues/new?title=[OHS]) or [see existing](https://github.com/pkp/pkp-lib/labels/Open%20Harvester%20Systems)
 
-## Using Git development source
-
-Checkout submodules and copy default configuration :
-
-    git submodule update --init --recursive
-    cp config.TEMPLATE.inc.php config.inc.php
-
-Install or update dependencies via Composer:
-
-    cd lib/pkp
-    # if you don't already have Composer installed:
-    curl -sS https://getcomposer.org/installer | php
-    php composer.phar update
-
-If your PHP version supports built-in development server :
-
-    php -S localhost:8000
-
-See [Wiki][wiki-dev] for more complete development guide.
-
-## Running Tests
-
-Specific requirements : [PHPunit][php-unit]. Installing with pear for example :
-
-    wget https://phar.phpunit.de/phpunit.phar
-    chmod +x phpunit.phar
-    sudo mv phpunit.phar /usr/local/bin/phpunit
-
-Setting up test environment :
-
-    mysql -u root -e 'create database ojs'
-    mysql -u root ojs < tests/functional/testserver.sql
-    cp config.TRAVIS.inc.php config.inc.php
-
-Running the tests :
-
-    ./lib/pkp/tools/runAllTests.sh -Cc
-
-## Bugs / Issues
-
-See https://github.com/pkp/pkp-lib/#issues for information on reporting issues.
-
-## License
-
-This software is released under the the [GNU General Public License][gpl-licence].
-
-See the file [COPYING][gpl-licence] included with this distribution for the terms
-of this license.
-
-Third parties are welcome to modify and redistribute OJS in entirety or parts
-according to the terms of this license. PKP also welcomes patches for
-improvements or bug fixes to the software.
-
-[pkp]: http://pkp.sfu.ca/
-[readme]: docs/README
-[wiki-dev]: http://pkp.sfu.ca/wiki/index.php/HOW-TO_check_out_PKP_applications_from_git
-[php-unit]: http://phpunit.de/
-[gpl-licence]: docs/COPYING
+Bugs are scheduled against the milestones that a fix will be released in. For example, if a bug was found in OJS 2.4.5, then it will be scheduled against OJS 2.4.6, which is the first release that will include the fix.
